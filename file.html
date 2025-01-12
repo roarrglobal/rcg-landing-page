@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCG SaaS Outlook Report 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --rcg-blue: #0033A0;  /* RCG Blue */
+            --rcg-red: #C41E3A;   /* RCG Red */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--rcg-blue) 0%, var(--rcg-red) 100%);
+        }
+
+        .rcg-blue {
+            color: var(--rcg-blue);
+        }
+
+        .rcg-red {
+            color: var(--rcg-red);
+        }
+
+        .bg-rcg-blue {
+            background-color: var(--rcg-blue);
+        }
+
+        .bg-rcg-red {
+            background-color: var(--rcg-red);
+        }
+
+        .report-card {
+            transition: transform 0.3s ease;
+        }
+
+        .report-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-4xl font-bold rcg-blue">rcg<span class="text-red-600">.</span></div>
+                <button class="bg-rcg-red text-white px-6 py-2 rounded-full hover:opacity-90">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                SaaS Outlook Report 2025
+            </h1>
+            <p class="text-xl mb-12">
+                Your comprehensive guide to navigating the future of SaaS
+            </p>
+            <div class="max-w-md mx-auto">
+                <form id="emailForm" class="space-y-4">
+                    <input
+                        type="email"
+                        placeholder="Enter your business email"
+                        class="w-full px-4 py-3 rounded-lg text-gray-900"
+                        required
+                    >
+                    <button
+                        type="submit"
+                        class="bg-rcg-red text-white px-8 py-3 rounded-lg hover:opacity-90 w-full"
+                    >
+                        Get Access Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Report Parts Section -->
+    <div class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 rcg-blue">Report Series Overview</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="reportCards">
+                <!-- Report cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="text-4xl font-bold mb-4">rcg<span class="text-red-600">.</span></div>
+                <p class="text-gray-400">© 2024 Roarr Consulting Group. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const reportParts = [
+            {
+                part: 1,
+                title: "SaaS Market Evolution & Growth Trends",
+                available: true,
+                releaseDate: "Available Now",
+                description: "Essential insights into 2025 SaaS trends, sales evolution, and regional market analysis. Featuring exclusive data from 100+ SaaS leaders."
+            },
+            {
+                part: 2,
+                title: "Investment & Market Analysis",
+                available: false,
+                releaseDate: "Coming February 10, 2025",
+                description: "Deep dive into industry-wise trends, competitive landscape, and investment patterns shaping the SaaS sector in 2025."
+            },
+            {
+                part: 3,
+                title: "Technology & Innovation Forecast",
+                available: false,
+                releaseDate: "Coming February 20, 2025",
+                description: "Comprehensive analysis of emerging technologies, GTM strategies, and AI-driven innovations transforming SaaS businesses."
+            },
+            {
+                part: 4,
+                title: "Customer Experience & Strategic Implementation",
+                available: false,
+                releaseDate: "Coming March 2, 2025",
+                description: "Strategic frameworks for product-market fit, customer success, and experience optimization in the evolving SaaS landscape."
+            },
+            {
+                part: 5,
+                title: "Future Outlook & Strategic Recommendations",
+                available: false,
+                releaseDate: "Coming March 12, 2025",
+                description: "Action-oriented recommendations, risk analysis, and strategic roadmap for SaaS success in 2025 and beyond."
+            }
+        ];
+
+        // Render report cards
+        function renderReportCards() {
+            const container = document.getElementById('reportCards');
+            container.innerHTML = reportParts.map(report => `
+                <div class="report-card bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-sm font-medium px-3 py-1 rounded-full ${
+                            report.available
+                                ? 'bg-green-100 text-green-800'
+                                : 'bg-gray-100 text-gray-600'
+                        }">
+                            ${report.releaseDate}
+                        </span>
+                        <span class="text-2xl font-bold rcg-blue">Part ${report.part}</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 rcg-blue">${report.title}</h3>
+                    <p class="text-gray-600">${report.description}</p>
+                </div>
+            `).join('');
+        }
+
+        // Handle form submission
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! You will receive access to Part 1 shortly.');
+        });
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderReportCards();
+        });
+    </script>
+</body>
+</html>
