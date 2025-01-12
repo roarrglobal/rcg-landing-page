@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCG SaaS Outlook Report 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <img src="assets/images/rcg-logo.png" alt="RCG Logo" class="logo">
+                <button class="bg-rcg-red text-white px-6 py-2 rounded-full hover:opacity-90">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                SaaS Outlook Report 2025
+            </h1>
+            <p class="text-xl mb-12">
+                Your comprehensive guide to navigating the future of SaaS
+            </p>
+            <div class="max-w-md mx-auto">
+                <form id="emailForm" class="space-y-4">
+                    <input
+                        type="email"
+                        placeholder="Enter your business email"
+                        class="w-full px-4 py-3 rounded-lg text-gray-900"
+                        required
+                    >
+                    <button
+                        type="submit"
+                        class="bg-rcg-red text-white px-8 py-3 rounded-lg hover:opacity-90 w-full"
+                    >
+                        Get Access Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Report Parts Section -->
+    <div class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 rcg-blue">Report Series Overview</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="reportCards">
+                <!-- Report cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
